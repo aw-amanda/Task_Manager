@@ -1,0 +1,26 @@
+@import "https://fonts.googleapis.com/css2?family=Bellota+Text:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Poller+One&display=swap";
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@theme {
+  --font-display: "Poller One", sans-serif, system-ui;
+  --font-body-text: "Bellota Text", sans-serif, system-ui;
+}
+
+html {
+  font-family: var(--font-body-text);
+  font-optical-sizing: auto;
+}
+
+@layer components {
+  .primary-gradient {
+    background: linear-gradient(
+      to bottom right,
+      oklch(86.5% 0.127 207.078), 
+      oklch(78.9% 0.154 211.53),
+      oklch(78.5% 0.115 274.713),
+      oklch(51.1% 0.262 276.966),
+      oklch(39.8% 0.195 277.366)
+    )
+  }
+}
