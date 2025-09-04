@@ -14,8 +14,9 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-  base: "/Task_Manager",
+  base: "/Task_Manager/",
   build: {
+    outDir: 'dist',
     rollupOptions: {
       onwarn(warning, warn) {
         if (warning.code === 'UNUSED_EXTERNAL_IMPORT') return
@@ -23,9 +24,8 @@ export default defineConfig({
       }
     }
   },
-  // Disable ESLint errors in build
   esbuild: {
-    drop: [], // Prevent removing unused code
+    drop: [],
     legalComments: 'none'
   }
 })
