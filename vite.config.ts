@@ -15,4 +15,17 @@ export default defineConfig({
     },
   },
   base: "/Task_Manager",
+  build: {
+    rollupOptions: {
+      onwarn(warning, warn) {
+        if (warning.code === 'UNUSED_EXTERNAL_IMPORT') return
+        warn(warning)
+      }
+    }
+  },
+  // Disable ESLint errors in build
+  esbuild: {
+    drop: [], // Prevent removing unused code
+    legalComments: 'none'
+  }
 })
